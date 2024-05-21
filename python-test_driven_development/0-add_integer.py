@@ -18,4 +18,4 @@ def add_integer(a, b=98):
     
     # Ejemplo de uso
 resultado = add_integer(1, 2)
-#print("Resultado:", resultado)
+print("Resultado:", resultado)
