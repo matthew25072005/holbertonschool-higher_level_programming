@@ -15,5 +15,3 @@ def add_integer(a, b=98):
         return int(a) + int(b)
     else:
         raise TypeError("Ambos argumentos deben ser enteros o flotantes")
-resultado = add_integer(a, b)
-print (resultado)
