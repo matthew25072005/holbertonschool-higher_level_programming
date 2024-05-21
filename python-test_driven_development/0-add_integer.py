@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def add_integer(a, b=98):
-        """
+    """
     Suma dos números enteros o flotantes y devuelve el resultado como un entero.
 
     Args:
