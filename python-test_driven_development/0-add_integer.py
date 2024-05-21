@@ -17,5 +17,5 @@ def add_integer(a, b=98):
         raise TypeError("Ambos argumentos deben ser enteros o flotantes")
 
 # Ejemplo de uso
-resultado = add_integer (int(a), int(b))
+resultado = add_integer(1, 2)
 print(resultado)
