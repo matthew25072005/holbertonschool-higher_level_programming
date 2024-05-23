@@ -8,7 +8,7 @@ Define a rectangle class
 class Rectangle:
     """
     Represent a rectangle.
-    
+
     Attributes:
         width (int): The width of the rectangle.
         height (int): The height of the rectangle.
@@ -74,4 +74,3 @@ class Rectangle:
     # Return a string representation of the rectangle for debugging
     def __repr__(self):
         return "<{} object at 0x{:x}>".format(self.__class__.__name__, id(self))
-    
