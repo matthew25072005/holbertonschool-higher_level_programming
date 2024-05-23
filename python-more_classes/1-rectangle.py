@@ -6,6 +6,13 @@ Define a rectangle class
 
 
 class Rectangle:
+    """
+    Represent a rectangle.
+    
+    Attributes:
+        width (int): The width of the rectangle.
+        height (int): The height of the rectangle.
+    """
     # Initialize the rectangle with optional width and height
     def __init__(self, width=0, height=0):
         self.width = width
