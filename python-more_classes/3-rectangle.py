@@ -72,5 +72,9 @@ class Rectangle:
         return result.rstrip()
 
     # Return a string representation of the rectangle for debugging
-    def __repr__(self):
-        return "<{}.{} object at 0x{:x}>".format(self.__module__, self.__class__.__name__, id(self))
+def __repr__(self):
+    return (
+        f"<{self.__class__.__name__} "
+        f"({self.width}, {self.height}) "
+        f"at 0x{id(self):x}>"
+    )
