@@ -72,4 +72,4 @@ class Rectangle:
 
     # Return a string representation of the rectangle for debugging
     def __repr__(self):
-        return "<{} object at 0x{:x}>".format(self.__class__.__name__, id(self))
+    return "<{} object at 0x{:x}>".format(self.__class__.__name__, id(self))
