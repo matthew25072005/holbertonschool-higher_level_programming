@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defnine a class Student."""
+"""Define a class Student."""
 
 
 class Student:
@@ -13,8 +13,8 @@ class Student:
 
     def to_json(self, attrs=None):
         """Get a dictionary representation of a Student."""
-        if (type(attrs) == list and
-                all(type(ele) == str for ele in attrs)):
+        if (isinstance(attrs, list) and
+                all(isinstance(ele, str) for ele in attrs)):
             return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
         return self.__dict__
 
