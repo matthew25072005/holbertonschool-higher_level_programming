@@ -29,16 +29,14 @@ class CustomObject:
         Args:
             filename (str): El nombre del archivo donde se guardará el objeto.
 
-        Raises:
-            FileNotFoundError: Si el archivo no se puede abrir.
-            pickle.PickleError: Si ocurre un error al serializar el objeto.
+        Retorna:
+            None si ocurre un error, de lo contrario no retorna nada.
         """
         try:
             with open(filename, 'wb') as f:
                 pickle.dump(self, f)
-        except (FileNotFoundError, pickle.PickleError) as e:
-            print(f"Error al serializar el objeto: {e}")
-            raise
+        except (FileNotFoundError, pickle.PickleError):
+            return None
 
     @classmethod
     def deserialize(cls, filename):
@@ -49,15 +47,10 @@ class CustomObject:
             filename (str): El nombre del archivo desde donde se cargará el objeto.
 
         Returns:
-            CustomObject: El objeto personalizado deserializado.
-
-        Raises:
-            FileNotFoundError: Si el archivo no se puede abrir.
-            pickle.PickleError: Si ocurre un error al deserializar el objeto.
+            CustomObject: El objeto personalizado deserializado, o None si ocurre un error.
         """
         try:
             with open(filename, 'rb') as f:
                 return pickle.load(f)
-        except (FileNotFoundError, pickle.PickleError) as e:
-            print(f"Error al deserializar el objeto: {e}")
-            raise
+        except (FileNotFoundError, pickle.PickleError):
+            return None
