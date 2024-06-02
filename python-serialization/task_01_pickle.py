@@ -44,10 +44,12 @@ class CustomObject:
         Deserializa el objeto personalizado.
 
         Args:
-            filename (str): El nombre del archivo desde donde se cargará el objeto.
+            filename (str): 
+            El nombre del archivo desde donde se cargará el objeto.
 
         Returns:
-            CustomObject: El objeto personalizado deserializado, o None si ocurre un error.
+            CustomObject: El objeto personalizado deserializado,
+            o None si ocurre un error.
         """
         try:
             with open(filename, 'rb') as f:
