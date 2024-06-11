@@ -13,7 +13,7 @@ def fetch_and_print_posts():
     response = requests.get(url)
 
     # Imprimimos el código de estado de la respuesta
-    print("Código de Estado:", response.status_code)
+    print("Status Code:", response.status_code)
 
     # Si la solicitud fue exitosa
     if response.status_code == 200:
