@@ -1,2 +1,2 @@
 -- This command is used to delete the entire database, including all its tables, views, stored procedures, and relationships.
-DROP DATABASE hbtn_0c_0;
+DROP DATABASE IF EXISTS hbtn_0c_0;
