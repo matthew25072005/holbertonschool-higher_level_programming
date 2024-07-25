@@ -2,4 +2,4 @@
 b = 89
 a = 10
 a, b = b, a
-print("a={} - b={}".format(a, b))
+print("a={} - b={}".format(b, a))
