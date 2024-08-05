@@ -7,7 +7,7 @@ def list_division(my_list_1, my_list_2, list_length):
             # Intenta obtener los elementos de las listas
             elem1 = my_list_1[i]
             elem2 = my_list_2[i]
-            
+
             # Intenta realizar la división
             try:
                 result.append(elem1 / elem2)
@@ -23,5 +23,5 @@ def list_division(my_list_1, my_list_2, list_length):
         except Exception as e:
             print("An unexpected error occurred: {}".format(e))
             result.append(0)
-    
+
     return result
