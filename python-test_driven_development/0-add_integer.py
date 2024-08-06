@@ -1,22 +1,22 @@
 #!/usr/bin/python3
+"""This module defines a function to add two integers."""
 
 def add_integer(a, b=98):
-    """
-    Suma dos números enteros o flotantes y devuelve el resultado como un entero.
+    """Add two integers.
 
     Args:
-        a (int or float): Primer número.
-        b (int or float, optional): Segundo número (por defecto es 98).
+        a (int, float): The first number.
+        b (int, float, optional): The second number. Defaults to 98.
 
     Returns:
-        int: Suma de a y b como un entero.
-    """
-    if isinstance(a, (int, float)) and isinstance(b, (int, float)):
-        return int(a) + int(b)
-    else:
-        raise TypeError("Ambos argumentos deben ser enteros o flotantes")
+        int: The sum of the two numbers, casted to an integer.
 
-# Ejemplo de uso
-if __name__ == "__main__":
-    resultado = add_integer(1, 2)
-    print(resultado)
+    Raises:
+        TypeError: If either a or b is not an integer or float.
+    """
+    if not isinstance(a, (int, float)):
+        raise TypeError("a must be an integer")
+    if not isinstance(b, (int, float)):
+        raise TypeError("b must be an integer")
+
+    return int(a) + int(b)
