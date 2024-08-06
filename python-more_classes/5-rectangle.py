@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Define a Rectangle class with width and height, and detect instance deletion."""
+"""Define a Rectangle class with width and height, 
+and detect instance deletion."""
+
 
 class Rectangle:
     """Rectangle class defined by width and height."""
@@ -54,7 +56,8 @@ class Rectangle:
         return "\n".join(["#" * self.__width] * self.__height)
 
     def __repr__(self):
-        """Return a string representation that can be used to recreate the rectangle."""
+        """Return a string representation that can be used 
+        to recreate the rectangle."""
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
