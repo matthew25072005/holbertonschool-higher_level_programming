@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Module for BaseGeometry class with basic geometry operations."""
 
 class BaseGeometry:
     """Base class for geometry operations."""
