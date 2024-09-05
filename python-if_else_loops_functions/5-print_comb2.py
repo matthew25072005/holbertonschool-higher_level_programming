@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-i = range(100)
-resultado = ', '.join(map(str, i))
-print(resultado)
+for i in range(99):
+    print("{}, ".format(i), end="")
+print("99")
