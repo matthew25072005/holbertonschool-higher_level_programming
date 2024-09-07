@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 def fizzbuzz():
     i = 0
+    a = Fizz
+    b = Buzz
     while i < 100:
-        a = Fizz
-        b = Buzz
         i += 1
         if i % 3 == 0:
             print("{} ".format(a))
