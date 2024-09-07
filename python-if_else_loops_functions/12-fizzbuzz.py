@@ -6,8 +6,8 @@ def fizzbuzz():
     while i < 100:
         i += 1
         if i % 3 == 0:
-            print("{} ".format(a))
+            print("{} ".format(a), end="")
         elif i % 5 == 0:
-            print("{} ".format(b))
+            print("{} ".format(b), end="")
         else:
-            print("{} ".format(i))
+            print("{} ".format(i), end="")
