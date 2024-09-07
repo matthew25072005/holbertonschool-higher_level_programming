@@ -6,10 +6,10 @@ def fizzbuzz():
     c = "FizzBuzz"
     while i < 100:
         i += 1
-        if i % 3 == 0:
+        if i % 3 == 0 and i % 5 == 0:
+            print("{} ".format(c), end="")
+        elif i % 3 == 0:
             print("{} ".format(a), end="")
-        elif i % 5 == 0:
-            print("{} ".format(b), end="")
         elif i % 3 == 0 and i % 5 == 0:
             print("{} ".format(c), end="")
         else:
