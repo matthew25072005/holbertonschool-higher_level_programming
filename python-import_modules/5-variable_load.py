@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import importlib.util
-import sys
 
 def main():
     file_path = '/tmp/variable_load_5.py'
