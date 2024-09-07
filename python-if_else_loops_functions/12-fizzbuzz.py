@@ -4,8 +4,8 @@ def fizzbuzz():
     while i < 100:
         i += 1
         if i % 3 == 0:
-            print("Fizz ")
+            print("Fizz ".format)
         elif i % 5 == 0:
-            print("Buzz ")
+            print("Buzz ".format)
         else:
             print("{} ".format(i))
