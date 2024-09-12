@@ -3,7 +3,7 @@ def divisible_by_2(my_list=[]):
     if not my_list:
         return None
     list_1 = []
-    for i in my_list:
+        for i in my_list:
         if i % 2 == 0:
             list_1.append(True)
             print("{} is divisible by 2".format(i))
