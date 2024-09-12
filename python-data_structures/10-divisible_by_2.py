@@ -8,3 +8,5 @@ def divisible_by_2(my_list=[]):
         else:
             print("{} is not divisible by 2".format(i))
     return list_1
+
+divisible_by_2(my_list)
