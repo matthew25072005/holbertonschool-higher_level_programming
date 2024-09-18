@@ -1,2 +1,10 @@
 #!/usr/bin/python3
-class square()
+"""
+Este módulo define una clase Square.
+"""
+
+class square():
+    """
+    Clase que representa un cuadrado.
+    """
+    pass
