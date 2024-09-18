@@ -3,7 +3,7 @@
 Este módulo define una clase Square.
 """
 
-class square:
+class Square:
     """
     Clase que representa un cuadrado.
     """
