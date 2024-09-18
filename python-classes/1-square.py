@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+
+
 class Square:
     """
     Esta clase representa un cuadrado.
