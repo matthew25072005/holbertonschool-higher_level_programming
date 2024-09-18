@@ -2,7 +2,6 @@
 """Modules that defines a Square"""
 
 
-
 class Square:
     """
     Esta clase representa un cuadrado.
