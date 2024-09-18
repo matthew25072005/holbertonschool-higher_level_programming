@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 class Square:
-    tam.__tam = size
+    def __init__(self, s):
+        self.__s = size
