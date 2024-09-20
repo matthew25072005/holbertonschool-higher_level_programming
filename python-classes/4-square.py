@@ -5,7 +5,7 @@
 class Square:
     """
     Define un cuadrado con un tamaño opcional.
-
+    
     Atributos:
         __size (int): Tamaño del lado del cuadrado.
     """
@@ -21,11 +21,35 @@ class Square:
             TypeError: Si size no es un entero.
             ValueError: Si size es menor que 0.
         """
-        if not isinstance(size, int):
+        self.size = size
+
+    @property
+    def size(self):
+        """
+        Getter para obtener el tamaño del lado del cuadrado.
+
+        Retorna:
+            int: El tamaño del lado del cuadrado.
+        """
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        """
+        Setter para definir el tamaño del lado del cuadrado.
+
+        Parámetros:
+            value (int): Nuevo tamaño del lado del cuadrado.
+
+        Excepciones:
+            TypeError: Si value no es un entero.
+            ValueError: Si value es menor que 0.
+        """
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if size < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = size
+        self.__size = value
 
     def area(self):
         """
