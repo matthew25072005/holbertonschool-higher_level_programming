@@ -17,10 +17,12 @@ class Square:
 
         Parámetros:
             size (int, opcional): Tamaño del lado del cuadrado. Default es 0.
-            position (tuple, opcional): Posición para imprimir el cuadrado. Default es (0, 0).
+            position (tuple, opcional): Posición para imprimir el cuadrado.
+            Default es (0, 0).
 
         Excepciones:
-            TypeError: Si size no es un entero, o position no es una tupla de 2 enteros positivos.
+            TypeError: Si size no es un entero, o position no es una tupla de
+            2 enteros positivos.
             ValueError: Si size es menor que 0.
         """
         self.size = size
@@ -75,8 +77,8 @@ class Square:
         Excepciones:
             TypeError: Si value no es una tupla de 2 enteros positivos.
         """
-        if not isinstance(value, tuple) or len(value) != 2 or \
-           not all(isinstance(num, int) and num >= 0 for num in value):
+        if (not isinstance(value, tuple) or len(value) != 2 or
+           not all(isinstance(num, int) and num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
