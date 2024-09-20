@@ -8,7 +8,8 @@ class Square:
 
     Atributos:
         __size (int): Tamaño del lado del cuadrado.
-        __position (tuple): Posición en la impresión, representada por un espacio (x, y).
+        __position (tuple): Posición en la impresión,
+        representada por un espacio (x, y).
     """
 
     def __init__(self, size=0, position=(0, 0)):
@@ -93,7 +94,8 @@ class Square:
 
     def my_print(self):
         """
-        Imprime el cuadrado utilizando el carácter `#` con base en la posición y el tamaño.
+        Imprime el cuadrado utilizando el
+        carácter `#` con base en la posición y el tamaño.
 
         Si size es igual a 0, imprime una línea vacía.
         """
