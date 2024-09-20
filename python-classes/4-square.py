@@ -5,7 +5,7 @@
 class Square:
     """
     Define un cuadrado con un tamaño opcional.
-    
+
     Atributos:
         __size (int): Tamaño del lado del cuadrado.
     """
