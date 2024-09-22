@@ -96,7 +96,8 @@ class Rectangle:
         Calcula y devuelve el perímetro del rectángulo.
 
         Retorna:
-            int: El perímetro del rectángulo. Retorna 0 si el ancho o la altura es 0.
+            int: El perímetro del rectángulo. Retorna 0 si el ancho
+            o la altura es 0.
         """
         if self.__width == 0 or self.__height == 0:
             return 0
@@ -104,7 +105,8 @@ class Rectangle:
 
     def __str__(self):
         """
-        Devuelve una representación en cadena del rectángulo usando el carácter '#'.
+        Devuelve una representación en cadena del rectángulo usando
+        el carácter '#'.
 
         Si el ancho o la altura es 0, devuelve una cadena vacía.
 
