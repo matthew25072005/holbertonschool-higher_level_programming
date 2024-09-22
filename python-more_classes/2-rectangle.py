@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module that defines a Rectangle"""
 
+
 class Rectangle:
     """
     Clase que define un rectángulo con atributos de ancho y altura.
@@ -95,7 +96,8 @@ class Rectangle:
         Calcula y devuelve el perímetro del rectángulo.
 
         Retorna:
-            int: El perímetro del rectángulo. Retorna 0 si el ancho o la altura es 0.
+            int: El perímetro del rectángulo. Retorna 0 si el ancho
+            o la altura es 0.
         """
         if self.__width == 0 or self.__height == 0:
             return 0
