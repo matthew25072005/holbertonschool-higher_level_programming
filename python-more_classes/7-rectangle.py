@@ -7,8 +7,10 @@ class Rectangle:
     Clase que define un rectángulo con atributos de ancho y altura.
 
     Atributos de clase:
-        number_of_instances (int): Cuenta el número de instancias activas de la clase Rectangle.
-        print_symbol: Símbolo usado para la representación en cadena del rectángulo.
+        number_of_instances (int): Cuenta el número de instancias activas
+        de la clase Rectangle.
+        print_symbol: Símbolo usado para la representación en cadena del
+        rectángulo.
 
     Atributos de instancia:
         __width (int): Ancho del rectángulo.
@@ -77,23 +79,24 @@ class Rectangle:
 
     def __str__(self):
         """
-        Devuelve una representación en cadena del rectángulo usando el carácter/símbolo
-        almacenado en print_symbol. Retorna una cadena vacía si el ancho o la altura es 0.
+        Devuelve una representación en cadena del rectángulo usando el
+        carácter/símbolo almacenado en print_symbol. Retorna una cadena vacía
+        si el ancho o la altura es 0.
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join(str(self.print_symbol) * self.__width for _ in range(self.__height))
+        return "\n".join(str(self.print_symbol) * self.__width
+                         for _ in range(self.__height))
 
     def __repr__(self):
         """
         Devuelve una representación oficial del rectángulo que permite
-        recrear la instancia
-        utilizando eval().
+        recrear la instancia utilizando eval().
         """
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        """Imprime un mensaje cuando la instancia del rectángulo es
-        eliminada y decrementa el contador."""
+        """Imprime un mensaje cuando la instancia del rectángulo es eliminada
+        y decrementa el contador."""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
