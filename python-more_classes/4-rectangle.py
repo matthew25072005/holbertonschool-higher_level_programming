@@ -71,7 +71,8 @@ class Rectangle:
 
     def __str__(self):
         """
-        Devuelve una representación en cadena del rectángulo usando el carácter '#'.
+        Devuelve una representación en cadena del rectángulo
+        usando el carácter '#'.
         Retorna una cadena vacía si el ancho o la altura es 0.
         """
         if self.__width == 0 or self.__height == 0:
@@ -80,7 +81,8 @@ class Rectangle:
 
     def __repr__(self):
         """
-        Devuelve una representación oficial del rectángulo que permite recrear la instancia
+        Devuelve una representación oficial del rectángulo que permite
+        recrear la instancia
         utilizando eval().
         """
         return f"Rectangle({self.__width}, {self.__height})"
