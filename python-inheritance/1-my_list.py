@@ -1,15 +1,17 @@
 #!/usr/bin/python3
-"""Module that defines a Rectangle"""
-
+"""
+This module defines the MyList class that inherits from list
+and includes a method to print the list sorted in ascending order.
+"""
 
 class MyList(list):
     """
-    MyList es una clase que hereda de la clase integrada list.
+    A subclass of list with an additional method to print the sorted list.
     """
-
+    
     def print_sorted(self):
         """
-        Método que imprime la lista en orden ascendente, pero no modifica la lista original.
+        Prints the elements of the list in ascending order without modifying
+        the original list.
         """
-    sorted(self)
-    print(self)
+        print(sorted(self))
