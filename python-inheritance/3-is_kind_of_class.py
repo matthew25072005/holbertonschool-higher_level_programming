@@ -1,4 +1,4 @@
-#!/usr/def/python3
+#!/usr/bin/python3
 """
 This module provides a function to check if an object is an instance of,
 or if it is an instance of a class that inherited from, a specified class.
