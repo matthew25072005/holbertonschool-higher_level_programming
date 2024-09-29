@@ -44,5 +44,6 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__height = height
 
-if __name__ == "__main__":
-    print(issubclass(Rectangle, BaseGeometry))  # This should print True
+# # Test to check if Rectangle is a subclass of BaseGeometry
+# if __name__ == "__main__":
+#     print(issubclass(Rectangle, BaseGeometry))  # This should print True
