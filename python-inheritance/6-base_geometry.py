@@ -3,6 +3,7 @@
 This module defines a class BaseGeometry with a public instance method area.
 """
 
+
 class BaseGeometry:
     """
     A class that represents base geometry concepts.
