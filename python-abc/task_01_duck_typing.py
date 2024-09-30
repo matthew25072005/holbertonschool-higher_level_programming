@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Module task_01_duck_typing
 This module defines an abstract base class Shape and two concrete
@@ -31,7 +31,12 @@ class Circle(Shape):
         
         Args:
             radius (float): The radius of the Circle.
+        
+        Raises:
+            ValueError: If radius is negative or zero.
         """
+        if radius <= 0:
+            raise ValueError("Radius must be a positive number.")
         self.__radius = radius
 
     def area(self):
@@ -52,7 +57,12 @@ class Rectangle(Shape):
         Args:
             width (float): The width of the Rectangle.
             height (float): The height of the Rectangle.
+        
+        Raises:
+            ValueError: If width or height is negative or zero.
         """
+        if width <= 0 or height <= 0:
+            raise ValueError("Width and height must be positive numbers.")
         self.__width = width
         self.__height = height
 
