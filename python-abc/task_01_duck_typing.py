@@ -1,71 +1,63 @@
-#!/usr/bin/env python3
-
+#!/usr/bin/python3
+"""this module is about creating an abstract class named Shape using the ABC
+package."""
 from abc import ABC, abstractmethod
-import math
+from math import pi
+
 
 class Shape(ABC):
-    """Clase abstracta para definir la interfaz de las formas."""
+  """
+  Abstract class representing a shape.
+  """
 
-    @abstractmethod
-    def area(self):
-        """Método abstracto para calcular el área de la forma."""
-        pass
+  @abstractmethod
+  def area(self):
+    pass
 
-    @abstractmethod
-    def perimeter(self):
-        """Método abstracto para calcular el perímetro de la forma."""
-        pass
-
+  @abstractmethod
+  def perimeter(self):
+    pass
 
 class Circle(Shape):
-    """Clase que representa un círculo."""
+  """
+  Concrete class representing a circle.
+  """
 
-    def __init__(self, radius):
-        """Inicializa el círculo con un radio dado.
+  def __init__(self, radius):
+    self.radius = radius
 
-        Args:
-            radius (float): El radio del círculo.
-        """
-        self.radius = radius  # Permitir radio negativo
+  def area(self):
+    return pi * self.radius**2
 
-    def area(self):
-        """Calcula y devuelve el área del círculo."""
-        return math.pi * (self.radius ** 2) if self.radius >= 0 else 0
-
-    def perimeter(self):
-        """Calcula y devuelve el perímetro del círculo."""
-        return 2 * math.pi * self.radius if self.radius >= 0 else 0
-
+  def perimeter(self):
+    return 2 * pi * self.radius
 
 class Rectangle(Shape):
-    """Clase que representa un rectángulo."""
+  """
+  Concrete class representing a rectangle.
+  """
 
-    def __init__(self, width, height):
-        """Inicializa el rectángulo con un ancho y alto dados.
+  def __init__(self, width, height):
+    self.width = width
+    self.height = height
 
-        Args:
-            width (float): El ancho del rectángulo.
-            height (float): El alto del rectángulo.
-        """
-        if width < 0 or height < 0:
-            raise ValueError("Width and height must be non-negative numbers.")
-        self.width = width
-        self.height = height
+  def area(self):
+    return self.width * self.height
 
-    def area(self):
-        """Calcula y devuelve el área del rectángulo."""
-        return self.width * self.height
-
-    def perimeter(self):
-        """Calcula y devuelve el perímetro del rectángulo."""
-        return 2 * (self.width + self.height)
-
+  def perimeter(self):
+    return 2 * (self.width + self.height)
 
 def shape_info(shape):
-    """Imprime el área y el perímetro de una forma dada.
+  """
+  Prints the area and perimeter of a shape object.
+  """
+  print(f"Area: {shape.area()}")
+  print(f"Perimeter: {shape.perimeter()}")
 
-    Args:
-        shape (Shape): Una instancia de una clase que hereda de Shape.
-    """
-    print("Area: {}".format(shape.area()))
-    print("Perimeter: {}".format(shape.perimeter()))
+# Test cases
+circle = Circle(5)
+rectangle = Rectangle(4, 6)
+
+shape_info(circle)
+print("---")
+shape_info(rectangle)
