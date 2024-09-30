@@ -22,22 +22,20 @@ class Circle(Shape):
     """Class representing a Circle."""
     
     def __init__(self, radius):
-        """Initialize the Circle with a non-negative radius.
+        """Initialize the Circle, allowing for negative radius.
         
         Args:
             radius (float): The radius of the Circle.
         """
-        if radius < 0:
-            raise ValueError("Radius must be a non-negative number.")
-        self.radius = radius
+        self.radius = radius  # Allow negative radius without raising an error.
 
     def area(self):
         """Calculate and return the area of the Circle."""
-        return math.pi * (self.radius ** 2)
+        return math.pi * (self.radius ** 2) if self.radius >= 0 else 0
 
     def perimeter(self):
         """Calculate and return the perimeter of the Circle."""
-        return 2 * math.pi * self.radius
+        return (2 * math.pi * self.radius) if self.radius >= 0 else 0
 
 
 class Rectangle(Shape):
@@ -73,13 +71,14 @@ def shape_info(shape):
     print("Area: {}".format(shape.area()))
     print("Perimeter: {}".format(shape.perimeter()))
 
+# Ejemplo de uso
 if __name__ == "__main__":
     try:
-        circle = Circle(0)
+        circle_negative = Circle(radius=-5)
         rectangle = Rectangle(5, 10)
 
-        print("Circle:")
-        shape_info(circle)
+        print("Circle with negative radius:")
+        shape_info(circle_negative)
         
         print("\nRectangle:")
         shape_info(rectangle)
