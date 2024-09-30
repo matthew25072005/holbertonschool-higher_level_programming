@@ -26,17 +26,15 @@ class Circle(Shape):
         Args:
             radius (float): El radio del círculo.
         """
-        if radius < 0:
-            raise ValueError("Radius must be a non-negative number.")
-        self.radius = radius
+        self.radius = radius  # Permitir radio negativo
 
     def area(self):
         """Calcula y devuelve el área del círculo."""
-        return math.pi * (self.radius ** 2)
+        return math.pi * (self.radius ** 2) if self.radius >= 0 else 0
 
     def perimeter(self):
         """Calcula y devuelve el perímetro del círculo."""
-        return 2 * math.pi * self.radius
+        return 2 * math.pi * self.radius if self.radius >= 0 else 0
 
 
 class Rectangle(Shape):
@@ -71,4 +69,3 @@ def shape_info(shape):
     """
     print("Area: {}".format(shape.area()))
     print("Perimeter: {}".format(shape.perimeter()))
-
