@@ -1,20 +1,28 @@
 #!/usr/bin/python3
-"""This module defines a CountedIterator class that tracks iterations."""
+"""Creating a class named CountedIterator that extends
+the built-in iterator obtained from the iter function.
+The CountedIterator should keep track of the number of
+items that have been iterated over. Specifically,
+you will need to override the __next__ method to
+increment a counter each time an item is fetched. Get_count is used to return current value of the counter"""
+
 
 class CountedIterator:
-    """An iterator that counts the number of items iterated over."""
-
     def __init__(self, iterable):
-        """Initialize the CountedIterator with an iterable."""
-        self.iterator = iter(iterable)  # Create an iterator from the iterable
-        self.count = 0  # Initialize the counter
+        self.iterator = iter(iterable)
+        self.count = 0
 
-    def get_count(self):
-        """Return the current count of items iterated."""
-        return self.count
+    def __iter__(self):
+        # This is required to make CountedIterator iterable
+        return self
 
     def __next__(self):
-        """Return the next item in the iterator and increment the count."""
-        self.count += 1  # Increment the count
-        return next(self.iterator)  # Return the next item from the original iterator
+        try:
+            item = next(self.iterator)
+            self.count += 1
+            return item
+        except StopIteration:
+            raise StopIteration("No more items.")
 
+    def get_count(self):
+        return self.count
