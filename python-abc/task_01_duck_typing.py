@@ -31,12 +31,7 @@ class Circle(Shape):
         
         Args:
             radius (float): The radius of the Circle.
-        
-        Raises:
-            ValueError: If radius is not a positive number.
         """
-        if radius <= 0:
-            raise ValueError("Radius must be a positive number.")
         self.__radius = radius
 
     def area(self):
@@ -57,6 +52,24 @@ class Rectangle(Shape):
         Args:
             width (float): The width of the Rectangle.
             height (float): The height of the Rectangle.
-        
-        Raises:
-            ValueError: If width or height is not a positive 
+        """
+        self.__width = width
+        self.__height = height
+
+    def area(self):
+        """Calculate and return the area of the Rectangle."""
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """Calculate and return the perimeter of the Rectangle."""
+        return 2 * (self.__width + self.__height)
+
+
+def shape_info(shape):
+    """Print the area and perimeter of the given shape.
+
+    Args:
+        shape (Shape): An instance of a class that inherits from Shape.
+    """
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
