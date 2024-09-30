@@ -31,10 +31,12 @@ class Circle(Shape):
 
     def area(self):
         """Calculate and return the area of the Circle."""
+        # Return 0 for negative radius
         return math.pi * (self.radius ** 2) if self.radius >= 0 else 0
 
     def perimeter(self):
         """Calculate and return the perimeter of the Circle."""
+        # Return 0 for negative radius
         return (2 * math.pi * self.radius) if self.radius >= 0 else 0
 
 
@@ -59,28 +61,4 @@ class Rectangle(Shape):
 
     def perimeter(self):
         """Calculate and return the perimeter of the Rectangle."""
-        return 2 * (self.width + self.height)
-
-
-def shape_info(shape):
-    """Print the area and perimeter of the given shape.
-    
-    Args:
-        shape (Shape): An instance of a class that inherits from Shape.
-    """
-    print("Area: {}".format(shape.area()))
-    print("Perimeter: {}".format(shape.perimeter()))
-
-# Ejemplo de uso
-if __name__ == "__main__":
-    try:
-        circle_negative = Circle(radius=-5)
-        rectangle = Rectangle(5, 10)
-
-        print("Circle with negative radius:")
-        shape_info(circle_negative)
-        
-        print("\nRectangle:")
-        shape_info(rectangle)
-    except ValueError as e:
-        print(e)
+      
