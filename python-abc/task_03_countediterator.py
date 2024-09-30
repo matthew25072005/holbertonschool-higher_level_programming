@@ -18,14 +18,3 @@ class CountedIterator:
         self.count += 1  # Increment the count
         return next(self.iterator)  # Return the next item from the original iterator
 
-# Example usage
-if __name__ == "__main__":
-    data = [1, 2, 3, 4]
-    counted_iter = CountedIterator(data)
-
-    try:
-        while True:
-            item = next(counted_iter)
-            print(f"Got {item}, total {counted_iter.get_count()} items iterated.")
-    except StopIteration:
-        print("No more items.")
