@@ -1,9 +1,4 @@
 #!/usr/bin/python3
-def write_file(filename="", text=""):
-    with open(filename, "w", encoding="UTF-8") as file:
-        n_o_c = file.write(text)
-    return n_o_c
-    #!/usr/bin/python3
 """
 This module provides a function to write a string to a text file (UTF-8 encoded)
 and returns the number of characters written.
