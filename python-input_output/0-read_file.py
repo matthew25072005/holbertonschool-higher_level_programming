@@ -14,13 +14,13 @@ def read_file(filename=""):
 
     Args:
         filename (str): The name of the file to be read. Defaults to an
-                        empty string, which expects the filename to be 
+                        empty string, which expects the filename to be
                         provided during the function call.
 
     This function opens the file specified by the 'filename' argument in
     read mode using UTF-8 encoding. It then reads the entire content of
     the file and prints it to the standard output (stdout). The 'with'
-    statement is used to ensure that the file is properly closed after 
+    statement is used to ensure that the file is properly closed after
     being read.
 
     Example usage:
