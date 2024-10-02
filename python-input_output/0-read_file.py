@@ -7,6 +7,7 @@ The module contains the following function:
     - read_file: Reads and prints the content of a specified file.
 """
 
+
 def read_file(filename=""):
     """
     Reads a UTF-8 encoded text file and prints its content to stdout.
@@ -21,7 +22,7 @@ def read_file(filename=""):
     the file and prints it to the standard output (stdout). The 'with'
     statement is used to ensure that the file is properly closed after 
     being read.
-    
+
     Example usage:
         read_file("example.txt")  # Reads and prints the content of the file
     """
