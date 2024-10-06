@@ -6,7 +6,7 @@ guarda en un archivo usando una representación JSON.
 import sys
 import os
 from save_to_json_file import save_to_json_file
-from 6-load_from_json_file import load_from_json_file
+from load_from_json_file import load_from_json_file
 
 # Nombre del archivo donde se guardará la lista en formato JSON
 filename = "add_item.json"
