@@ -19,6 +19,7 @@ Uso:
 
 import json
 
+
 def from_json_string(my_str):
     """
     Convierte una cadena JSON a un objeto de Python.
@@ -29,8 +30,6 @@ def from_json_string(my_str):
     Returns:
         Un objeto de Python representado por la cadena JSON.
     """
-    # Convertir la cadena JSON en un objeto de Python
     des_my_str = json.loads(my_str)
-    
-    # Devolver el objeto de Python
+
     return des_my_str
