@@ -1,45 +1,36 @@
 #!/usr/bin/python3
-    """
-    Este módulo está diseñado para ser ejecutado con Python 3.
+"""
+Este módulo contiene una función para convertir un objeto de Python a su
+representación en formato JSON.
 
-    El uso de la línea `#!/usr/bin/python3` al inicio del archivo es conocido
-    como *shebang*. Esto indica al sistema operativo que el script debe ser
-    ejecutado utilizando el intérprete de Python 3.
+El módulo utiliza el paquete estándar `json` de Python para realizar la
+conversión de objetos a cadenas JSON.
 
-    Estructura:
-        Este módulo aún no tiene funcionalidades implementadas, pero puede ser
-        utilizado para escribir código y ejecutarlo directamente en un entorno
-        compatible con Python 3.
+Funciones:
+    - to_json_string(my_obj): Convierte un objeto de Python a una cadena en
+      formato JSON.
 
-    Funciones:
-        No se han definido funciones todavía.
-
-    Clases:
-        No se han definido clases todavía.
-
-    Ejemplo de uso:
-        Para ejecutar este módulo en un entorno Unix/Linux, puedes asegurarte de
-        que el archivo sea ejecutable utilizando el siguiente comando:
-
-        $ chmod +x nombre_del_archivo.py
-        $ ./nombre_del_archivo.py
-    """
-
-# Aquí es donde se implementará el código del módulo.
+Uso:
+    Este módulo puede ser usado para convertir cualquier objeto serializable
+    en una cadena JSON. Si el objeto no es serializable, se lanzará un error,
+    aunque no es necesario manejar las excepciones explícitamente.
+"""
 
 import json
 
 
 def to_json_string(my_obj):
     """
-    Converts a Python object to its JSON string representation.
+    Convierte un objeto de Python a su representación en formato JSON.
     
     Args:
-        my_obj: The Python object to be converted to JSON.
+        my_obj: El objeto de Python a ser convertido a formato JSON.
         
     Returns:
-        A JSON string representation of the object.
+        Una cadena que representa el objeto en formato JSON.
     """
-json.dumps(my_obj) = objeto_json
-
-return objeto_json
+    # Convertir el objeto a una cadena JSON
+    objeto_json = json.dumps(my_obj)
+    
+    # Devolver la representación en JSON
+    return objeto_json
