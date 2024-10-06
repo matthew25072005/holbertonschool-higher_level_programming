@@ -1,24 +1,26 @@
 #!/usr/bin/python3
 """
-Este módulo añade todos los argumentos pasados a una lista de Python y los
-guarda en un archivo usando una representación JSON.
+Script that adds all arguments to a Python list,
+and then saves them to a file.
 """
 import sys
 import os
+
+# Import functions from previous files
 from save_to_json_file import save_to_json_file
 from load_from_json_file import load_from_json_file
 
-# Nombre del archivo donde se guardará la lista en formato JSON
+# File where the list will be stored
 filename = "add_item.json"
 
-# Verifica si el archivo ya existe para cargar la lista, si no, crea una nueva
+# Check if the file exists, and load its content
 if os.path.exists(filename):
     my_list = load_from_json_file(filename)
 else:
     my_list = []
 
-# Agrega los argumentos pasados desde la línea de comandos a la lista
+# Add new arguments from command line (ignoring the script name)
 my_list.extend(sys.argv[1:])
 
-# Guarda la lista actualizada en el archivo JSON
+# Save the updated list to the file
 save_to_json_file(my_list, filename)
