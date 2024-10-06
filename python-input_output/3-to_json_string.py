@@ -22,15 +22,12 @@ import json
 def to_json_string(my_obj):
     """
     Convierte un objeto de Python a su representación en formato JSON.
-    
-    Args:
+        Args:
         my_obj: El objeto de Python a ser convertido a formato JSON.
-        
-    Returns:
+        Returns:
         Una cadena que representa el objeto en formato JSON.
     """
     # Convertir el objeto a una cadena JSON
     objeto_json = json.dumps(my_obj)
-    
     # Devolver la representación en JSON
     return objeto_json
