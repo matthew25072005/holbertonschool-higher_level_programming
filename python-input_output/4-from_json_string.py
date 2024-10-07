@@ -21,19 +21,17 @@ Uso:
     de que la cadena JSON no represente un objeto válido.
 """
 
-import json
+import sys
+import os
+from save_to_json_file import save_to_json_file
+from load_from_json_file import load_from_json_file
 
+filename = "add_item.json"
 
-def from_json_string(my_str):
-    """
-    Convierte una cadena JSON a un objeto de Python.
+if os.path.exists(filename):
+    my_list = load_from_json_file(filename)
+else:
+    my_list = []
 
-    Args:
-        my_str: La cadena en formato JSON que será convertida.
-
-    Returns:
-        Un objeto de Python representado por la cadena JSON.
-    """
-    des_my_str = json.loads(my_str)
-
-    return des_my_str
+my_list.extend(sys.argv[1:])
+save_to_json_file(my_list, filename)
