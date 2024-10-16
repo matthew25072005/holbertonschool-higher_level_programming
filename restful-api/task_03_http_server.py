@@ -36,7 +36,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
-            error_message = {"Endpoint not found"}
+            error_message = {"error": "404 Not Found"}
             self.wfile.write(json.dumps(error_message).encode())
 
 if __name__ == "__main__":
