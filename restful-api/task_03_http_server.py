@@ -1,10 +1,21 @@
 #!/usr/bin/python3
-import json
-from http.server import BaseHTTPRequestHandler, HTTPServer
 
-class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
+import http.server
+import json
+
+class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
+    
     def do_GET(self):
-        if self.path == '/data':
+        """Handle GET requests"""
+        if self.path == '/':
+            # Maneja la ruta raíz '/'
+            self.send_response(200)
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
+            self.wfile.write(b"Hello, this is a simple API!")
+        
+        elif self.path == '/data':
+            # Maneja la ruta '/data' para devolver JSON
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
@@ -12,22 +23,23 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(data).encode())
         
         elif self.path == '/status':
+            # Maneja la ruta '/status' para verificar el estado del API
             self.send_response(200)
-            self.send_header('Content-type', 'text/plain')
+            self.send_header('Content-type', 'application/json')
             self.end_headers()
-            self.wfile.write(b"OK")
+            status = {"status": "OK"}
+            self.wfile.write(json.dumps(status).encode())
         
         else:
+            # Maneja cualquier otra ruta no definida
             self.send_response(404)
-            self.send_header('Content-type', 'text/plain')
+            self.send_header('Content-type', 'application/json')
             self.end_headers()
-            self.wfile.write(b"Endpoint not found")
+            error_message = {"error": "Endpoint not found"}
+            self.wfile.write(json.dumps(error_message).encode())
 
-def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler):
+if __name__ == "__main__":
     server_address = ('', 8000)
-    httpd = server_class(server_address, handler_class)
+    httpd = http.server.HTTPServer(server_address, SimpleHTTPRequestHandler)
     print("Server running on port 8000...")
     httpd.serve_forever()
-
-if __name__ == '__main__':
-    run()
