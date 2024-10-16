@@ -12,8 +12,9 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-type', 'text/html')
             self.end_headers()
-            self.wfile.write(b"Hello, this is a simple API!")
-        
+            response_message = "Hello, this is a simple API!"
+            self.wfile.write(response_message.encode())
+
         elif self.path == '/data':
             # Maneja la ruta '/data' para devolver JSON
             self.send_response(200)
@@ -21,7 +22,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             data = {"name": "John", "age": 30, "city": "New York"}
             self.wfile.write(json.dumps(data).encode())
-        
+
         elif self.path == '/status':
             # Maneja la ruta '/status' para verificar el estado del API
             self.send_response(200)
@@ -29,7 +30,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             status = {"status": "OK"}
             self.wfile.write(json.dumps(status).encode())
-        
+
         else:
             # Maneja cualquier otra ruta no definida
             self.send_response(404)
