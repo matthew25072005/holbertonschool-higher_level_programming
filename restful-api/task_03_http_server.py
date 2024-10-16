@@ -33,7 +33,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
         else:
             # Maneja cualquier otra ruta no definida
-            self.send_response(404)
+            self.send_response(404 Not Found)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
             error_message = {"error": "Endpoint not found"}
