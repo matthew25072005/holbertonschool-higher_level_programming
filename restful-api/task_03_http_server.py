@@ -42,12 +42,13 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(data).encode())
 
         elif self.path == "/status":
-            # /status path: return a simple status message
+            # /status path: return a JSON status message
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
+            # Cambiar la respuesta de estado
             status = {
-                "status": "OK"
+                "status": "success"
             }
             self.wfile.write(json.dumps(status).encode())
 
