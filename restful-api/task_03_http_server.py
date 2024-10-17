@@ -10,12 +10,9 @@ class Handler(http.server.BaseHTTPRequestHandler):
         # Handling the /status endpoint
         if self.path == "/status":
             self.send_response(200)
-            self.send_header("Content-type", "application/json")  # Change content-type to JSON
+            self.send_header("Content-type", "text/html")  # Ensure correct content-type
             self.end_headers()
-            status = {
-                "status": "OK"  # Return JSON response
-            }
-            self.wfile.write(json.dumps(status).encode("utf-8"))  # Send JSON response
+            self.wfile.write(b"OK")  # Send plain text "OK"
 
         # Handling the /info endpoint
         elif self.path == "/info":
@@ -52,7 +49,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header("Content-type", "text/html")
             self.end_headers()
-            self.wfile.write(b"404 Not Found")
+            self.wfile.write(b"Endpoint not found")  # Ensure the correct 404 message
 
 
 # Set up and run the server
