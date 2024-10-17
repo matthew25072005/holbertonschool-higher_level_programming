@@ -1,69 +1,61 @@
-#!/usr/bin/python3
-"""
-This script sets up a basic HTTP server using the http.server module.
-It handles GET requests, serves JSON data for specific endpoints,
-and handles errors for undefined endpoints.
-"""
-
 import http.server
-import socketserver
 import json
 
-class MyHandler(http.server.BaseHTTPRequestHandler):
-    """Request handler class for our HTTP server."""
+PORT = 8000
+
+class Handler(http.server.BaseHTTPRequestHandler):
+    """Start of subclass"""
 
     def do_GET(self):
-        """
-        Handle GET requests based on the requested path.
-
-        Endpoints:
-        - /: Returns a simple text message.
-        - /data: Returns a sample JSON dataset.
-        - /status: Returns a JSON response with the API status.
-        Any other endpoint will return a 404 error.
-        """
-        if self.path == "/":
-            # Root path: simple text response
+        # Handling the /status endpoint
+        if self.path == "/status":
             self.send_response(200)
-            self.send_header("Content-type", "text/plain")
+            self.send_header("Content-type", "application/json")  # Change content-type to JSON
             self.end_headers()
-            self.wfile.write(b"Hello, this is a simple API!")
+            status = {
+                "status": "OK"  # Return JSON response
+            }
+            self.wfile.write(json.dumps(status).encode("utf-8"))  # Send JSON response
 
-        elif self.path == "/data":
-            # /data path: return a sample JSON dataset
+        # Handling the /info endpoint
+        elif self.path == "/info":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
-            data = {
+            info = {
+                "version": "1.0",
+                "description": "A simple API built with http.server"
+            }
+            self.wfile.write(json.dumps(info).encode("utf-8"))
+
+        # Handling the /data endpoint
+        elif self.path == "/data":
+            self.send_response(200)
+            self.send_header("Content-type", "application/json")
+            self.end_headers()
+            sample_data = {
                 "name": "John",
                 "age": 30,
                 "city": "New York"
             }
-            self.wfile.write(json.dumps(data).encode())
+            self.wfile.write(json.dumps(sample_data).encode("utf-8"))
 
-        elif self.path == "/status":
-            # /status path: return a JSON status message
+        # Handling the root endpoint
+        elif self.path == "/":
             self.send_response(200)
-            self.send_header("Content-type", "application/json")
+            self.send_header("Content-type", "text/html")
             self.end_headers()
-            # Cambiar la respuesta de estado
-            status = {
-                "status": "success"
-            }
-            self.wfile.write(json.dumps(status).encode())
+            self.wfile.write(b"Hello, this is a simple API!")
 
+        # Handling undefined endpoints
         else:
-            # Undefined paths: return a 404 error
             self.send_response(404)
-            self.send_header("Content-type", "text/plain")
+            self.send_header("Content-type", "text/html")
             self.end_headers()
-            self.wfile.write(b"Endpoint not found")
+            self.wfile.write(b"404 Not Found")
 
-# Define the server port
-PORT = 8000
 
-# Set up the server using MyHandler to handle requests
-with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
-    print(f"Serving on port {PORT}")
-    # Start the server, keeping it running forever
+# Set up and run the server
+with http.server.HTTPServer(("", PORT), Handler) as httpd:
+    print(f"Serving at port {PORT}")
     httpd.serve_forever()
