@@ -42,10 +42,23 @@ def add_user():
     """Agrega un nuevo usuario a la base de datos simulada."""
     data = request.get_json()
 
-    if "username" not in data:
+    # Verifica si el cuerpo de la solicitud es válido
+    if not data:
+        return jsonify({"error": "Invalid JSON data"}), 400
+
+    # Verifica que todos los campos necesarios estén presentes
+    if "username" not in data or not data.get("username"):
         return jsonify({"error": "Username is required"}), 400
+    if "name" not in data or not data.get("name"):
+        return jsonify({"error": "Name is required"}), 400
+    if "age" not in data or not data.get("age"):
+        return jsonify({"error": "Age is required"}), 400
+    if "city" not in data or not data.get("city"):
+        return jsonify({"error": "City is required"}), 400
 
     username = data["username"]
+    
+    # Verifica si el usuario ya existe
     if username in users:
         return jsonify({"error": "User already exists"}), 400
 
