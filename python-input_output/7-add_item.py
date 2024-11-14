@@ -1,10 +1,6 @@
 #!/usr/bin/python3
+"""modulo
 """
-Script that adds all arguments to a Python list,
-and then saves them to a file.
-"""
-
-
 import sys
 import os
 from save_to_json_file import save_to_json_file
