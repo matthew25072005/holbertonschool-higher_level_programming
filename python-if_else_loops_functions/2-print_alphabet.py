@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 i = 97
 while i > 96 and i < 123:
-    print(f'{str(chr(i))}')
+    char = chr(i)
+    print(str.format(char), end="")
     i +=1
