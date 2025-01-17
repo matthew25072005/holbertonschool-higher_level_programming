@@ -5,4 +5,5 @@ while i >= 0 and i < 99:
     print(str.format(char), end=", ")
     i += 1
 if i == 99:
-    print(str.format(char))
+    char = str(i)
+    print(str.format(char), end="\n")
