@@ -6,4 +6,4 @@ while i >= 0 and i < 99:
     i += 1
 if i == 99:
     char = str(i)
-    print(str.format(char), end="\n")
+    print(str.format(char))
