@@ -4,7 +4,10 @@ n2 = 1
 i = 10
 
 while n2 <= i and n1 < 9:
-    print(f"{n1}{n2}" + (", " if not (n1 == 8 and n2 == 9) else ""), end="")
+    if n1 == 8:
+        print(f"{n1}{n2}")
+    else:
+        print(f"{n1}{n2}", end=", ")
     n2 += 1
     if n2 == i and n1 < 9:
         n1 += 1
