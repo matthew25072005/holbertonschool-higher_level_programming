@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 def print_list_integer(my_list=[]):
-    i = 0
-    print (str.format(my_list[i]))
-    i += 1
+    for i in my_list:
+        char = str(my_list)
+        print(str.format(char[i]), end="\n")
