@@ -4,5 +4,5 @@ def print_list_integer(my_list=[]):
     i = 0
     while i < 5:
         valor == my_list(i)
-        print (valor)
+        print (str.format(valor))
         i += 1
