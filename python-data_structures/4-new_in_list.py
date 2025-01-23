@@ -5,3 +5,5 @@ def new_in_list(my_list, idx, element):
     if idx >= 0 and idx < largo:
         list1[idx] = element
         return list1
+    else:
+        return my_list
