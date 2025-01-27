@@ -1,0 +1,14 @@
+>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem.")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Quonam modo?
+Utrum igitur tibi litteram videor an totas paginas commovere?
+Non autem hoc:
+igitur ne illud quidem.
+>>> text_indentation("This is a test. It is only a test?")
+This is a test.
+It is only a test?
+>>> text_indentation("End with punctuation: should print two new lines.")
+End with punctuation:
+should print two new lines.
+>>> text_indentation("No punctuation at the end")
+No punctuation at the end
