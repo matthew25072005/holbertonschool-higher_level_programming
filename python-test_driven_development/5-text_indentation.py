@@ -7,7 +7,7 @@ each of these characters: '.', '?', and ':'.
 
 def text_indentation(text):
     """
-    Prints a text with two new lines after each of the characters: '.', '?', and ':'.
+    text with two new lines after each of the characters: '.', '?', and ':'
 
     Args:
         text (str): The text to print.
