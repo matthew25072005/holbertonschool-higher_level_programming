@@ -4,11 +4,11 @@
 def add_integer(a, b=98):
     """ 
     Returns the sum of 'a' and 'b'.
-    
+
     Args:
         a (int): first integer to be added to sum.
         b (int): second integer to be added to sum.
-    
+
     Returns:
         int: The sum of a + b
   
@@ -23,4 +23,3 @@ def add_integer(a, b=98):
         raise TypeError("b must be an integer")
 
     return int(a) + int(b)
-
