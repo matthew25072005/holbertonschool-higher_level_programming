@@ -8,5 +8,5 @@ class Square:
     """
     Represents a square.
     """
-    def __init__(size):
+    def __init__(__size):
         pass
