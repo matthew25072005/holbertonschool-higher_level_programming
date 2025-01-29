@@ -9,7 +9,7 @@ class Square:
     Represents a square.
     """
     def __init__(self, size=0):
-        self.__size = size
+        self.size = size
     
     @property
     def size(self):
@@ -23,6 +23,8 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
 
+        self.__size = value
+
     def area(self):
-        area = self.__size * self.__size
+        area = self.size * self.size
         return area
