@@ -20,3 +20,4 @@ class Square:
         return area
 
     def size(self, value):
+        pass
