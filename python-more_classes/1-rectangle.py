@@ -24,3 +24,4 @@ class Rectangle:
             raise ValueError("height must be >= 0")
     
     def __init__(self, width=0, height=0):
+        pass
