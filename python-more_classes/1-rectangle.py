@@ -9,6 +9,10 @@ class Rectangle:
     Represents a rectangle.
     """
 
+
+    def __init__(self, width=0, height=0):
+
+
     def width(self, value):
         self.__width = width
         if width is not int:
@@ -21,7 +25,6 @@ class Rectangle:
         if height is not int:
             raise TypeError("height must be an integer")
         elif height < 0:
+    def __init__(self, width=0, height=0):
             raise ValueError("height must be >= 0")
     
-    def __init__(self, width=0, height=0):
-        pass
