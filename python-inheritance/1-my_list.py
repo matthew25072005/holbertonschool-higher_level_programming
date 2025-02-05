@@ -6,7 +6,7 @@ This module defines a class named lookup.
 
 class MyList:
     def print_sorted(self):
-    """
-    this fintion print a sorted list
-    """
+        """
+        this fintion print a sorted list
+        """
         print(sort(self))
