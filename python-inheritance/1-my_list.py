@@ -4,7 +4,7 @@ This module defines a class named MyList.
 """
 
 
-class MyList:
+class MyList(list):
     """
     class mylist.
     """
@@ -12,4 +12,4 @@ class MyList:
         """
         this funtion print a sorted list
         """
-        print(sort(self))
+        print(sorted(self))
