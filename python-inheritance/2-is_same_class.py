@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module defines a class named MyList.
+This is a module
 """
 
 
