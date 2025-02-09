@@ -33,9 +33,13 @@ class Circle(Shape):
             self.radius = radius
 
     def area(self):
+        if self.radius < 0:
+            return 0
         return math.pi * (self.radius ** 2)
 
     def perimeter(self):
+        if self.radius < 0:
+            return 0
         return 2 * math.pi * self.radius
 
 class Rectangle(Shape):
