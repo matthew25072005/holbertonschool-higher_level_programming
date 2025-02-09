@@ -3,11 +3,12 @@
 This is a module
 """
 from abc import ABC, abstractmethod
-import math  # Importar el módulo math
+import math
+
 
 class Shape(ABC):
     """
-    An abstract class named Shape
+    an abstract class named Shape
     """
     @abstractmethod
     def area(self):
@@ -18,18 +19,18 @@ class Shape(ABC):
         pass
 
 def shape_info(shape):
-    """
-    Function to print the area and perimeter of a shape.
-    """
     print(f"Area: {shape.area()}")
     print(f"Perimeter: {shape.perimeter()}")
 
 class Circle(Shape):
     """
-    Concrete class for Circle
+    concrete class
     """
     def __init__(self, radius):
-        self.radius = radius
+        if radius < 0:
+            self.radius = 0
+        else:
+            self.radius = radius
 
     def area(self):
         if self.radius < 0:
@@ -43,7 +44,7 @@ class Circle(Shape):
 
 class Rectangle(Shape):
     """
-    Concrete class for Rectangle
+    concrete class
     """
     def __init__(self, width, height):
         self.width = width
@@ -53,5 +54,4 @@ class Rectangle(Shape):
         return self.width * self.height
 
     def perimeter(self):
-        return 2 * (self.width + self.height)
-
+        return self.width * 2 + self.height * 2
