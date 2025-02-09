@@ -27,9 +27,10 @@ class Circle(Shape):
     concrete class
     """
     def __init__(self, radius):
-        # if radius < 0:
-        #     raise ValueError("El radio no puede ser negativo.")
-        self.radius = radius
+        if radius < 0:
+            raise ValueError("El radio no puede ser negativo.")
+        else:
+            self.radius = radius
 
     def area(self):
         return math.pi * (self.radius ** 2)
