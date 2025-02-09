@@ -5,9 +5,12 @@ This is a module
 
 
 class VerboseList(list):
-    def append(self, obj):
-        super().append(obj)
-        print(f"Added [{item}] to the list.")
+    """
+    class named VerboseList
+    """
+    def append(self, item):
+        super().append(item)
+        print(f"Added [{item}] to the list.")")
 
     def extend(self, iterable):
         super().extend(iterable)
