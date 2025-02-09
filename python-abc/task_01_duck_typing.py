@@ -3,7 +3,7 @@
 This is a module
 """
 from abc import ABC, abstractmethod
-import math
+
 
 
 class Shape(ABC):
@@ -18,29 +18,19 @@ class Shape(ABC):
     def perimeter(self):
         pass
 
-def shape_info(shape):
-    print(f"Area: {shape.area()}")
-    print(f"Perimeter: {shape.perimeter()}")
 
 class Circle(Shape):
     """
     concrete class
     """
     def __init__(self, radius):
-        if radius < 0:
-            self.radius = 0
-        else:
-            self.radius = radius
+        self.__radius = radius
 
     def area(self):
-        if self.radius < 0:
-            return 0
-        return math.pi * (self.radius ** 2)
+        return math.pi * (self.__radius ** 2)
 
     def perimeter(self):
-        if self.radius < 0:
-            return 0
-        return 2 * math.pi * self.radius
+        return 2 * math.pi * self.__radius
 
 class Rectangle(Shape):
     """
@@ -55,3 +45,7 @@ class Rectangle(Shape):
 
     def perimeter(self):
         return self.width * 2 + self.height * 2
+
+def shape_info(shape):
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
