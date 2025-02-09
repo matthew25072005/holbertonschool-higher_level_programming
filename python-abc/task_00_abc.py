@@ -24,5 +24,6 @@ class Cat(Animal):
     """
     subclasse of Animal
     """
+    @abstractmethod
     def sound(self):
         return "Meow"
