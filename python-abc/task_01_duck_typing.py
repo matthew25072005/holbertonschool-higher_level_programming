@@ -28,7 +28,7 @@ class Circle(Shape):
     """
     def __init__(self, radius):
         if radius < 0:
-            raise ValueError("El radio no puede ser negativo.")
+            self.radius = 0
         else:
             self.radius = radius
 
