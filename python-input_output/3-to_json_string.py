@@ -2,7 +2,7 @@
 """
 This is a module
 """
-
+import JSON
 
 def to_json_string(my_obj):
     """
