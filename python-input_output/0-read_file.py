@@ -3,6 +3,7 @@
 This is a module
 """
 
+
 def read_file(filename=""):
     """
     this is a function that reads a text file (UTF8) and prints it to stdout
